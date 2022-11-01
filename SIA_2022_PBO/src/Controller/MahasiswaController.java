@@ -4,6 +4,8 @@
  */
 package Controller;
 
+import Model.Mahasiswa;
+
 /**
  *
  * @author yudis
@@ -37,6 +39,15 @@ public class MahasiswaController {
     // Melihat Keuangan () 
     
     public void MelihatKeuangan () {
+        
+    }
+    
+    // Data Dummy 
+    
+    public void DummyMahasiswa () {
+       //  Mahasiswa datamahasiswa1 = new Mahasiswa(111807," ","Dominikus Yudistira","1234");
+        
+     
         
     }
     
