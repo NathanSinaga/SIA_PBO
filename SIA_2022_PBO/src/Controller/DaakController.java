@@ -14,6 +14,7 @@ import Model.Mahasiswa;
  */
 public class DaakController {
     
+    // Ditambahkan oleh Dominikus Yudistira
     // Daak memasukkan Pengumuman
     public void DaakMemasukkanPengumuman(String judul,String deskripsi){
         
@@ -34,4 +35,10 @@ public class DaakController {
     public void DaakBlokirAbsensiMahasiswa ( Mahasiswa mahasiswa){
         
     }
+    
+    // Daak Input Pembayaran Keuangan Mahasiswa
+    public void InputPembayaranKeuanganMahasiswa (Mahasiswa mahasiswa){
+        
+    }
+    
 }
