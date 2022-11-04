@@ -6,35 +6,40 @@
 package Model;
 
 /**
- *
  * @author Nathan Sinaga
  */
-public abstract class Pengguna {
-    
-// Ditambahkan oleh Dominikus Yudistira
+public abstract class Pengguna
+{
+
+    // Ditambahkan oleh Dominikus Yudistira
     private String nama;
     private String password;
     //private KehadiranInterface kehadiran;
 
-    public Pengguna(String nama, String password) {
+    public Pengguna(String nama, String password)
+    {
         this.nama = nama;
         this.password = password;
     }
 
-    public String getNama() {
+    public String getNama()
+    {
         return nama;
     }
 
-    public void setNama(String nama) {
+    public void setNama(String nama)
+    {
         this.nama = nama;
     }
 
-    public String getPassword() {
+    public String getPassword()
+    {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
-    
+
 }

@@ -5,33 +5,38 @@
 package Model;
 
 /**
- *
  * @author yudis
  */
-public class Mahasiswa extends Pengguna{
-         private int nim;
-    private String [] jurusan;
+public class Mahasiswa extends Pengguna
+{
+    private int nim;
+    private String[] jurusan;
 
-    public Mahasiswa(int nim, String[] jurusan, String nama, String password) {
+    public Mahasiswa(int nim, String[] jurusan, String nama, String password)
+    {
         super(nama, password);
         this.nim = nim;
         this.jurusan = jurusan;
     }
 
-    public int getNim() {
+    public int getNim()
+    {
         return nim;
     }
 
-    public void setNim(int nim) {
+    public void setNim(int nim)
+    {
         this.nim = nim;
     }
 
-    public String[] getJurusan() {
+    public String[] getJurusan()
+    {
         return jurusan;
     }
 
-    public void setJurusan(String[] jurusan) {
+    public void setJurusan(String[] jurusan)
+    {
         this.jurusan = jurusan;
     }
-    
+
 }

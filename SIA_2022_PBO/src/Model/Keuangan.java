@@ -5,17 +5,18 @@
 package Model;
 
 /**
- *
  * @author yudis
  */
-public class Keuangan {
-     private int idBiaya;
+public class Keuangan
+{
+    private int idBiaya;
     private int idPengumuman;
     private int nim;
     private int jumlahBiaya;
     private String deksripsi;
 
-    public Keuangan(int idBiaya, int idPengumuman, int nim, int jumlahBiaya, String deksripsi) {
+    public Keuangan(int idBiaya, int idPengumuman, int nim, int jumlahBiaya, String deksripsi)
+    {
         this.idBiaya = idBiaya;
         this.idPengumuman = idPengumuman;
         this.nim = nim;
@@ -23,45 +24,55 @@ public class Keuangan {
         this.deksripsi = deksripsi;
     }
 
-    public int getIdBiaya() {
+    public int getIdBiaya()
+    {
         return idBiaya;
     }
 
-    public void setIdBiaya(int idBiaya) {
+    public void setIdBiaya(int idBiaya)
+    {
         this.idBiaya = idBiaya;
     }
 
-    public int getIdPengumuman() {
+    public int getIdPengumuman()
+    {
         return idPengumuman;
     }
 
-    public void setIdPengumuman(int idPengumuman) {
+    public void setIdPengumuman(int idPengumuman)
+    {
         this.idPengumuman = idPengumuman;
     }
 
-    public int getNim() {
+    public int getNim()
+    {
         return nim;
     }
 
-    public void setNim(int nim) {
+    public void setNim(int nim)
+    {
         this.nim = nim;
     }
 
-    public int getJumlahBiaya() {
+    public int getJumlahBiaya()
+    {
         return jumlahBiaya;
     }
 
-    public void setJumlahBiaya(int jumlahBiaya) {
+    public void setJumlahBiaya(int jumlahBiaya)
+    {
         this.jumlahBiaya = jumlahBiaya;
     }
 
-    public String getDeksripsi() {
+    public String getDeksripsi()
+    {
         return deksripsi;
     }
 
-    public void setDeksripsi(String deksripsi) {
+    public void setDeksripsi(String deksripsi)
+    {
         this.deksripsi = deksripsi;
     }
-    
-    
+
+
 }

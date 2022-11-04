@@ -5,9 +5,9 @@
 package Model;
 
 /**
- *
  * @author yudis
  */
-public enum DosenKategori {
-      Tetap,Honorer,LuarBiasa;
+public enum DosenKategori
+{
+    Tetap, Honorer, LuarBiasa;
 }

@@ -5,9 +5,9 @@
 package Model;
 
 /**
- *
  * @author yudis
  */
-public interface KehadiranInterface {
-    
+public interface KehadiranInterface
+{
+
 }

@@ -5,32 +5,37 @@
 package Model;
 
 /**
- *
  * @author yudis
  */
-public class Daak extends Pengguna {
-     private int nikDaak;
+public class Daak extends Pengguna
+{
+    private int nikDaak;
     private int gajiDaak;
 
-    public Daak(int nikDaak, int gajiDaak, String nama, String password) {
+    public Daak(int nikDaak, int gajiDaak, String nama, String password)
+    {
         super(nama, password);
         this.nikDaak = nikDaak;
         this.gajiDaak = gajiDaak;
     }
 
-    public int getNikDaak() {
+    public int getNikDaak()
+    {
         return nikDaak;
     }
 
-    public void setNikDaak(int nikDaak) {
+    public void setNikDaak(int nikDaak)
+    {
         this.nikDaak = nikDaak;
     }
 
-    public int getGajiDaak() {
+    public int getGajiDaak()
+    {
         return gajiDaak;
     }
 
-    public void setGajiDaak(int gajiDaak) {
+    public void setGajiDaak(int gajiDaak)
+    {
         this.gajiDaak = gajiDaak;
     }
 }
