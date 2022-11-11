@@ -10,6 +10,6 @@ Digunakan sebagai repository Tugas Besar Pemograman Berorientasi Objek
 
 1121043 - Nathan Sinaga
 
-1121053-Raphael Evan
+1121053 - Raphael Evan
 
-1121057-Michael Pransisco Purba
+1121057 - Michael Pransisco Purba
