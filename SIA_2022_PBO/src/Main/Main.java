@@ -5,6 +5,8 @@
  */
 package Main;
 
+import View.*;
+
 /**
  *
  * @author Nathan Sinaga
@@ -15,7 +17,38 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        // 1
+        new FormLogin().setVisible(true);
+        // 2
+        new FormPengajuanRS().setVisible(true);
+        // 3
+        new FormBayarRS().setVisible(true);
+        // 4
+        new FormRosterMataKuliah().setVisible(true);
+        // 5
+        new FormNilai().setVisible(true);
+        // 6
+        new FormAbsensi().setVisible(true);
+        // 7
+        new FormKotakSaran().setVisible(true);
+        // 8
+        // skip dulu tunggu fungsi
+        // 9
+        // message box
+        // 10
+        new FormRosterMataKuliah().setVisible(true);
+        // 11
+        new FormMasukNilai().setVisible(true);
+        // 12
+        new FormMengajukanPengumuman().setVisible(true);
+        // 13
+        // jadwal jadwal apa?
+        // 14
+        new FormMasukPengumuman().setVisible(true);
+        // 15
+        new FormJadwalKuliah().setVisible(true);
+        // 16
+        // message box
     }
     
 }

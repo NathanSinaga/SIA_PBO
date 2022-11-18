@@ -2,12 +2,12 @@ package View;
 
 import javax.swing.*;
 
-public class LoginForm extends BaseForm
+public class FormLogin extends BaseForm
 {
     public JPasswordField passwordBox = new JPasswordField();
     public JTextField userNameBox = new JTextField();
 
-    public LoginForm()
+    public FormLogin()
     {
         super();
         this.setTitle("Login Form");
