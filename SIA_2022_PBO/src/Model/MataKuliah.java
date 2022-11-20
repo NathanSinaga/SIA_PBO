@@ -9,56 +9,51 @@ package Model;
  */
 public class MataKuliah
 {
-    private int idMataKuliah;
-    private String namaMatkul;
-    private int sks;
-    private String[] jurusan;
-
-    public MataKuliah(int idMataKuliah, String namaMatkul, int sks, String[] jurusan)
-    {
-        this.idMataKuliah = idMataKuliah;
-        this.namaMatkul = namaMatkul;
-        this.sks = sks;
-        this.jurusan = jurusan;
+    private String nik_dosen;
+    private String kode_mataKuliah;
+    private String nama_mataKuliah;
+    private int sks_mataKuliah;
+    
+    public MataKuliah(){
+        
     }
-
-    public int getIdMataKuliah()
-    {
-        return idMataKuliah;
+    
+    public MataKuliah(String nik_dosen, String kode_mataKuliah, String nama_mataKuliah, int sks_mataKuliah){
+        this.nik_dosen = nik_dosen;
+        this.kode_mataKuliah = kode_mataKuliah;
+        this.nama_mataKuliah = nama_mataKuliah;
+        this.sks_mataKuliah = sks_mataKuliah;
     }
-
-    public void setIdMataKuliah(int idMataKuliah)
-    {
-        this.idMataKuliah = idMataKuliah;
+    
+    public void setNik_Dosen(String nik_dosen){
+        this.nik_dosen = nik_dosen;
     }
-
-    public String getNamaMatkul()
-    {
-        return namaMatkul;
+    
+    public void setKode_MataKuliah(String kode_mataKuliah){
+        this.kode_mataKuliah = kode_mataKuliah;
     }
-
-    public void setNamaMatkul(String namaMatkul)
-    {
-        this.namaMatkul = namaMatkul;
+    
+    public void setNama_MataKuliah(String nama_mataKuliah){
+        this.nama_mataKuliah = nama_mataKuliah;
     }
-
-    public int getSks()
-    {
-        return sks;
+    
+    public void setSks_MataKuliah(int sks_mataKuliah){
+        this.sks_mataKuliah = sks_mataKuliah;
     }
-
-    public void setSks(int sks)
-    {
-        this.sks = sks;
+    
+    public String getNik_Dosen(){
+        return this.nik_dosen;
     }
-
-    public String[] getJurusan()
-    {
-        return jurusan;
+    
+    public String getKode_MataKuliah(){
+        return this.kode_mataKuliah;
     }
-
-    public void setJurusan(String[] jurusan)
-    {
-        this.jurusan = jurusan;
+    
+    public String getNama_MataKuliah(){
+        return this.nama_mataKuliah;
+    }
+    
+    public int getSks_MataKuliah(){
+        return this.sks_mataKuliah;
     }
 }
