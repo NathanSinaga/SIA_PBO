@@ -9,45 +9,51 @@ package Model;
  */
 public class RencanaStudi
 {
-    private int nim;
-    private int idMataKuliah;
-    private int prasyarat;
-
-    public RencanaStudi(int nim, int idMataKuliah, int prasyarat)
-    {
+    private String nim;
+    private int id_rencanaStudi;
+    private String tahun;
+    private int semester;
+    
+    public RencanaStudi(){
+        
+    }
+    
+    public RencanaStudi(String nim, int id_rencanaStudi, String tahun, int semester){
         this.nim = nim;
-        this.idMataKuliah = idMataKuliah;
-        this.prasyarat = prasyarat;
+        this.id_rencanaStudi = id_rencanaStudi;
+        this.tahun = tahun;
+        this.semester = semester;
     }
-
-    public int getNim()
-    {
-        return nim;
-    }
-
-    public void setNim(int nim)
-    {
+    
+    public void setNim(String nim){
         this.nim = nim;
     }
-
-    public int getIdMataKuliah()
-    {
-        return idMataKuliah;
+    
+    public void setId_rencanaStudi(int id_rencanaStudi){
+        this.id_rencanaStudi = id_rencanaStudi;
     }
-
-    public void setIdMataKuliah(int idMataKuliah)
-    {
-        this.idMataKuliah = idMataKuliah;
+    
+    public void setTahun(String tahun){
+        this.tahun = tahun;
     }
-
-    public int getPrasyarat()
-    {
-        return prasyarat;
+    
+    public void setSemester(int semester){
+        this.semester = semester;
     }
-
-    public void setPrasyarat(int prasyarat)
-    {
-        this.prasyarat = prasyarat;
+    
+    public String getNim(){
+        return this.nim;
     }
-
+    
+    public int getId_rencanaStudi(){
+        return this.id_rencanaStudi;
+    }
+    
+    public String getTahun(){
+        return this.tahun;
+    }
+    
+    public int getSemester(){
+        return this.semester;
+    }
 }
