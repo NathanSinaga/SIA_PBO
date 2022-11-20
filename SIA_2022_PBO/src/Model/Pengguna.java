@@ -12,34 +12,45 @@ public abstract class Pengguna
 {
 
     // Ditambahkan oleh Dominikus Yudistira
-    private String nama;
+    private String email;
     private String password;
+    private String tipe_pengguna;
     //private KehadiranInterface kehadiran;
 
-    public Pengguna(String nama, String password)
+    public Pengguna(){
+        
+    }
+    
+    public Pengguna(String email, String password, String tipe_pengguna)
     {
-        this.nama = nama;
+        this.email = email;
         this.password = password;
+        this.tipe_pengguna = tipe_pengguna;
     }
 
-    public String getNama()
-    {
-        return nama;
-    }
+   public void setEmail(String email){
+       this.email = email;
+   }
+   
+   public void setPassword(String password){
+       this.password = password;
+   }
+   
+   public void setTipe_Pengguna(String tipe_pengguna){
+       this.tipe_pengguna = tipe_pengguna;
+   }
+   
+   public String getEmail(){
+       return this.email;
+   }
+   
+   public String getPassword(){
+       return this.password;
+   }
+   
+   public String getTipe_Pengguna(){
+       return this.tipe_pengguna;
+   }
 
-    public void setNama(String nama)
-    {
-        this.nama = nama;
-    }
-
-    public String getPassword()
-    {
-        return password;
-    }
-
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
 
 }
