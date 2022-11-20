@@ -12,7 +12,7 @@ import Model.Mahasiswa;
  */
 public class MahasiswaController {
     
-    // Memasukkan Rencana Studi
+    
     
     public void MemasukanRencanaStudi (){
         
