@@ -9,34 +9,47 @@ package Model;
  */
 public class Mahasiswa extends Pengguna
 {
-    private int nim;
-    private String[] jurusan;
+    private int id_jurusan;
+    private String nim_mahasiswa;
+    private String nama_mahasiswa;
 
-    public Mahasiswa(int nim, String[] jurusan, String nama, String password)
+    
+    public Mahasiswa(){
+        
+    }
+    
+    public Mahasiswa(String email, String password, String tipe_pengguna, String nama, int id_jurusan, String nim_mahasiswa, String nama_mahasiswa)
     {
-        super(nama, password);
-        this.nim = nim;
-        this.jurusan = jurusan;
+        super(email, password, tipe_pengguna);
+        this.id_jurusan = id_jurusan;
+        this.nim_mahasiswa = nim_mahasiswa;
+        this.nama_mahasiswa = nama_mahasiswa;
     }
 
-    public int getNim()
-    {
-        return nim;
+
+    public void setNama_Mahasiswa(String nama_mahasiswa){
+        this.nama_mahasiswa = nama_mahasiswa;
+    }
+    
+    public void setId_Jurusan(int id_jurusan){
+        this.id_jurusan = id_jurusan;
+    }
+    
+    public void setNim_Mahasiswa(String nim_mahasiswa){
+        this.nim_mahasiswa = nim_mahasiswa;
     }
 
-    public void setNim(int nim)
-    {
-        this.nim = nim;
+    public String getNama_Mahasiswa(){
+        return this.nama_mahasiswa;
     }
-
-    public String[] getJurusan()
-    {
-        return jurusan;
+    
+    public int getId_Jurusan(){
+        return this.id_jurusan;
     }
-
-    public void setJurusan(String[] jurusan)
-    {
-        this.jurusan = jurusan;
+    
+    public String getNim_Mahasiswa(){
+        return this.nim_mahasiswa;
     }
+   
 
 }
