@@ -30,12 +30,13 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
     private JButton bFeedBack;
     private JButton bTransaksi;
     private JButton bUpdateData;
-
+    private JButton bLihatPengumuman;
+    
     public MenuMahasiswa() {
         contraniner = getContentPane();
         contraniner.setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        
+
         bRencanaStudi = new JButton("Pengajuan Rencana Studi");
         bRencanaStudi.setFont(new Font("Arial", Font.PLAIN, 15));
         bRencanaStudi.setSize(280, 50);
@@ -91,11 +92,18 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         bUpdateData.setLocation(150, 480);
         bUpdateData.addActionListener(this);
         contraniner.add(bUpdateData);
-
-        setTitle("Menu Mahasiswa");
-        setBounds(300, 90, 600, 700);
-        setVisible(true);
         
+        bLihatPengumuman = new JButton("Pengumuman");
+        bLihatPengumuman.setFont(new Font("Arial", Font.PLAIN, 15));
+        bLihatPengumuman.setSize(280, 50);
+        bLihatPengumuman.setLocation(150, 540);
+        bLihatPengumuman.addActionListener(this);
+        contraniner.add(bLihatPengumuman);
+        
+        setTitle("Menu Mahasiswa");
+        setBounds(300, 90, 600, 710);
+        setVisible(true);
+
     }
 
     @Override
@@ -117,6 +125,9 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         } else if (e.getSource() == bUpdateData) {
 
         }
-    
-}
+
+    }
+    public static void main(String[] args) {
+       MenuMahasiswa menu = new MenuMahasiswa();
+    }
 }
