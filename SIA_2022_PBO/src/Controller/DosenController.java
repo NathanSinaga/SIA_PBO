@@ -5,6 +5,10 @@
 package Controller;
 
 import Model.Dosen;
+import Model.PengajuanPengumuman;
+import Model.Pengumuman;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -45,5 +49,23 @@ public class DosenController {
         return (dosen);
     }
     
-    
+     //Insert pengajuan pengumuman
+    public static boolean insertPengajuanPengumuman(String nik_dosen, PengajuanPengumuman pengajuanPengumuman) {
+        conn.connect();
+        String query = "INSERT INTO pengajuan_pengumuman(nik_dosen, nik_daak, judul, deksripsi, tanggal) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement stmt = conn.con.prepareStatement(query);
+            System.out.println(pengajuanPengumuman.getNik_daak());
+            stmt.setString(1, nik_dosen);
+            stmt.setString(2, pengajuanPengumuman.getNik_daak());
+            stmt.setString(3, pengajuanPengumuman.getJudul());
+            stmt.setString(4, pengajuanPengumuman.getDeskripsi());
+            stmt.setDate(5, (Date) pengajuanPengumuman.getTanggal());
+            stmt.executeUpdate();
+            return (true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return (false);
+        }
+    }
 }

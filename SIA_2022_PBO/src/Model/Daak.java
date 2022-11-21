@@ -13,6 +13,9 @@ public class Daak extends Pengguna
     private String nama_daak;
     private int gaji_daak;
 
+    public Daak() {
+    }
+
     public Daak(String email, String password, String tipe_pengguna, String nik_daak, String nama_daak, int gaji_daak)
     {
         super(email, password, tipe_pengguna);        

@@ -7,73 +7,63 @@ package Model;
 /**
  * @author yudis
  */
-public class Pengumuman
-{
+public class Pengumuman{
+
     private int idPengumuman;
     private String judul;
     private String Deskripsi;
     private int tanggalPosting;
     private String catatan;
 
-    public Pengumuman(int idPengumuman, String judul, String Deskripsi, int tanggalPosting, String catatan)
-    {
+    public Pengumuman() {
+
+    }
+
+    public Pengumuman(int idPengumuman, String judul, String Deskripsi, int tanggalPosting, String catatan) {
         this.idPengumuman = idPengumuman;
         this.judul = judul;
         this.Deskripsi = Deskripsi;
         this.tanggalPosting = tanggalPosting;
         this.catatan = catatan;
     }
-    public Pengumuman(){
-        
-    }
 
-    public int getIdPengumuman()
-    {
+    public int getIdPengumuman() {
         return idPengumuman;
     }
 
-    public void setIdPengumuman(int idPengumuman)
-    {
+    public void setIdPengumuman(int idPengumuman) {
         this.idPengumuman = idPengumuman;
     }
 
-    public String getJudul()
-    {
+    public String getJudul() {
         return judul;
     }
 
-    public void setJudul(String judul)
-    {
+    public void setJudul(String judul) {
         this.judul = judul;
     }
 
-    public String getDeskripsi()
-    {
+    public String getDeskripsi() {
         return Deskripsi;
     }
 
-    public void setDeskripsi(String Deskripsi)
-    {
+    public void setDeskripsi(String Deskripsi) {
         this.Deskripsi = Deskripsi;
     }
 
-    public int getTanggalPosting()
-    {
+    public int getTanggalPosting() {
         return tanggalPosting;
     }
 
-    public void setTanggalPosting(int tanggalPosting)
-    {
+    public void setTanggalPosting(int tanggalPosting) {
         this.tanggalPosting = tanggalPosting;
     }
 
-    public String getCatatan()
-    {
+    public String getCatatan() {
         return catatan;
     }
 
-    public void setCatatan(String catatan)
-    {
+    public void setCatatan(String catatan) {
         this.catatan = catatan;
     }
 
