@@ -60,7 +60,7 @@ public class MenuDosen extends JFrame implements ActionListener{
         }else if (e.getSource() == bInputNilai) {
             
         }else if (e.getSource() == bIsiPengumuman) {
-            
+            Form_PengajuanPengumuman Form_PengajuanPengumuman = new Form_PengajuanPengumuman();
         }
     }
 }
