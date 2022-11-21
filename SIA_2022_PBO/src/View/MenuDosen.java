@@ -68,12 +68,12 @@ public class MenuDosen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bJadwalAjar) {
-            new FormJadwalKuliah();
+            new FormRosterMataKuliah();
         } else if (e.getSource() == bInputNilai) {
             new FormMasukNilai();
         } else if (e.getSource() == bIsiPengumuman) {
             new Form_PengajuanPengumuman();
-        }else if (e.getSource() == bLihatPengumuman) {
+        } else if (e.getSource() == bLihatPengumuman) {
             new Lihat_Pengumuman();
         }
     }
