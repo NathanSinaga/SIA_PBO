@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.MataKuliah;
 import Model.Pengguna;
 import Model.Pengumuman;
 import java.sql.ResultSet;
@@ -59,5 +60,22 @@ public class Controller {
             e.printStackTrace();
         }
         return (listPengumuman);
+    }
+    
+    public static MataKuliah getMataKuliahByKode(String kode_mataKuliah) {
+        MataKuliah mk = new MataKuliah();
+        conn.connect();
+        String query = "SELECT * FROM matakuliah WHERE matakuliah.kode_matakuliah='" + kode_mataKuliah +  "';";
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            mk.setNik_Dosen(rs.getString("nik_dosen"));
+            mk.setKode_MataKuliah(rs.getString("kode_matakuliah"));
+            mk.setNama_MataKuliah(rs.getString("nama_matakuliah"));
+            mk.setSks_MataKuliah(rs.getInt("sks_matakuliah"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (lmk);
     }
 }
