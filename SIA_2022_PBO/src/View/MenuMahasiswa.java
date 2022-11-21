@@ -109,15 +109,15 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bRencanaStudi) {
-
+            new FormPengajuanRS();
         } else if (e.getSource() == bBayarRencanaStudi) {
-
+            new FormBayarRS();
         } else if (e.getSource() == bJadwal) {
-
+            new FormJadwalKuliah();
         } else if (e.getSource() == bNilai) {
-
+            new FormNilai();
         } else if (e.getSource() == bAbsen) {
-
+            new FormAbsensi ();
         } else if (e.getSource() == bFeedBack) {
             new FormFeedBack();
         } else if (e.getSource() == bTransaksi) {
