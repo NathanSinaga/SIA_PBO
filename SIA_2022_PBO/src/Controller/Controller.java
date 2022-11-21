@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.Pengguna;
+import Model.Pengumuman;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,5 +38,26 @@ public class Controller {
             e.printStackTrace();
         }
         return (users);
+    }
+    
+    //get all pengumuman
+    public static ArrayList<Pengumuman> getAllPengumuman() {
+        ArrayList<Pengumuman> listPengumuman = new ArrayList<>();
+        conn.connect();
+        String query = "SELECT * FROM pengumuman";
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                Pengumuman pengumuman = new Pengumuman();
+                pengumuman.setJudul(rs.getString("judul"));
+                pengumuman.setDeskripsi(rs.getString("deskripsi"));
+                //
+                listPengumuman.add(pengumuman);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (listPengumuman);
     }
 }

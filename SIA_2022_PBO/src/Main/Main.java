@@ -17,7 +17,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("s");
         // 1
         new FormLogin().setVisible(true);
         // 2
@@ -52,6 +51,7 @@ public class Main {
         // 15
         new FormJadwalKuliah().setVisible(true);
         // 16
+        new Lihat_Pengumuman();
         // message box
     }
     
