@@ -26,7 +26,13 @@ public class Mahasiswa extends Pengguna
         this.nama_mahasiswa = nama_mahasiswa;
     }
 
-
+    public Mahasiswa(String email, int id_jurusan, String nim, String nama){
+        super(email);
+        this.id_jurusan = id_jurusan;
+        this.nim_mahasiswa = nim;
+        this.nama_mahasiswa = nama;
+    }
+    
     public void setNama_Mahasiswa(String nama_mahasiswa){
         this.nama_mahasiswa = nama_mahasiswa;
     }
