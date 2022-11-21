@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Controller {
     static DatabaseHandler conn = new DatabaseHandler();
 
-    // SELECT ALL from table users
+    // Semua dari tabel pengguna
     public static ArrayList<Pengguna> getAllUsers() {
         ArrayList<Pengguna> users = new ArrayList<>();
         conn.connect();
