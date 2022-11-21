@@ -18,8 +18,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class FormLihatDaftarTransaksi extends JFrame implements ActionListener{
     private Container contraniner;
     private JLabel lDaftarTransaksi;
-    private JLabel lSaran;
-    private JTextArea tSaran;
     private JButton bDaftarTransaksi;
     public FormLihatDaftarTransaksi (){
         contraniner = getContentPane();
