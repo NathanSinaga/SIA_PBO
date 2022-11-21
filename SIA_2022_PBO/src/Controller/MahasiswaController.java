@@ -6,6 +6,7 @@ package Controller;
 
 import static Controller.DosenController.conn;
 import Model.Mahasiswa;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +16,22 @@ import java.sql.Statement;
  */
 public class MahasiswaController {
     
-    
+    static DatabaseHandler conn = new DatabaseHandler();
+    public static boolean insertNewFeedback(String nik, String nim, String Saran) {
+        conn.connect();
+        String query = "INSERT INTO feedback(nik_dosen,nim_mahasiswa, saran) VALUES(?,?,?)";
+        try {
+            PreparedStatement stmt = conn.con.prepareStatement(query);
+            stmt.setString(1, nik);
+            stmt.setString(2, nim);
+            stmt.setString(3, Saran);
+            stmt.executeUpdate();
+            return (true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return (false);
+        }
+    }
     // SELECT WHERE
     public static Mahasiswa getUser(String email) { // email && password
         conn.connect();
