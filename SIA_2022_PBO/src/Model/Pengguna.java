@@ -8,7 +8,7 @@ package Model;
 /**
  * @author Nathan Sinaga
  */
-public abstract class Pengguna
+public class Pengguna
 {
 
     // Ditambahkan oleh Dominikus Yudistira
