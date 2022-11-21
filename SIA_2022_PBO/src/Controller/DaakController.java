@@ -63,7 +63,27 @@ public class DaakController {
             return (false);
         }
     }
-    
+
+    // SELECT WHERE daak
+    public static Daak getDaak(String email) { // email && password
+        conn.connect();
+        String query = "SELECT * FROM daak WHERE email='" + email + "'";
+        Daak daak = new Daak();
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                daak.setEmail(rs.getString("email"));
+                daak.setNik_Daak(rs.getString("nik_daak"));
+                daak.setNama_Daak(rs.getString("nama_daak"));
+                daak.setGaji_Daak(rs.getInt("gaji_daak"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (daak);
+    }
+
     // Ditambahkan oleh Dominikus Yudistira
     // Daak memasukkan Pengumuman
     public void DaakMemasukkanPengumuman(String judul, String deskripsi) {

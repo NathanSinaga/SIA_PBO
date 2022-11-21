@@ -31,7 +31,7 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
     private JButton bTransaksi;
     private JButton bUpdateData;
     private JButton bLihatPengumuman;
-    
+
     public MenuMahasiswa() {
         contraniner = getContentPane();
         contraniner.setLayout(null);
@@ -92,14 +92,14 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         bUpdateData.setLocation(150, 480);
         bUpdateData.addActionListener(this);
         contraniner.add(bUpdateData);
-        
+
         bLihatPengumuman = new JButton("Pengumuman");
         bLihatPengumuman.setFont(new Font("Arial", Font.PLAIN, 15));
         bLihatPengumuman.setSize(280, 50);
         bLihatPengumuman.setLocation(150, 540);
         bLihatPengumuman.addActionListener(this);
         contraniner.add(bLihatPengumuman);
-        
+
         setTitle("Menu Mahasiswa");
         setBounds(300, 90, 600, 710);
         setVisible(true);
@@ -119,17 +119,18 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         } else if (e.getSource() == bAbsen) {
 
         } else if (e.getSource() == bFeedBack) {
-            FormFeedBack formFeedBack = new FormFeedBack();
+            new FormFeedBack();
         } else if (e.getSource() == bTransaksi) {
-            FormLihatDaftarTransaksi FormLihatDaftarTransaksi = new FormLihatDaftarTransaksi();
+            new FormLihatDaftarTransaksi();
         } else if (e.getSource() == bUpdateData) {
-            FormUpdateDataMahasiswa formUpdateDataMahasiswa = new FormUpdateDataMahasiswa ();
-        }else if (e.getSource() == bLihatPengumuman ) {
-            Lihat_Pengumuman lihatPengumuman  = new Lihat_Pengumuman();
+            new FormUpdateDataMahasiswa();
+        } else if (e.getSource() == bLihatPengumuman) {
+            new Lihat_Pengumuman();
         }
 
     }
+
     public static void main(String[] args) {
-       MenuMahasiswa menu = new MenuMahasiswa();
+        MenuMahasiswa menu = new MenuMahasiswa();
     }
 }

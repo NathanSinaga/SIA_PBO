@@ -31,7 +31,7 @@ public class FormUpdateDataMahasiswa {
         frame.setLocationRelativeTo(null);
 
         Mahasiswa mhs = new Mahasiswa();
-        mhs = getUser("juan@gmail.com"); // ini ntar diganti jadii usernow.email
+        mhs = getMahasiswa("juan@gmail.com"); // ini ntar diganti jadii usernow.email
 
         String tempEmail = mhs.getEmail(); 
 

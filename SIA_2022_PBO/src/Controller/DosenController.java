@@ -4,7 +4,9 @@
  */
 package Controller;
 
+import static Controller.MahasiswaController.conn;
 import Model.Dosen;
+import Model.Mahasiswa;
 import Model.PengajuanPengumuman;
 import Model.Pengumuman;
 import java.sql.Date;
@@ -67,5 +69,26 @@ public class DosenController {
             e.printStackTrace();
             return (false);
         }
+    }
+    // SELECT WHERE dosen
+    public static Dosen getDosen(String email) { // email && password
+        conn.connect();
+        String query = "SELECT * FROM dosen WHERE email='" + email + "'";
+        Dosen dosen = new Dosen();
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                dosen.setEmail(rs.getString("email"));
+                dosen.setId_Jurusan(rs.getInt("id_jurusan"));
+                dosen.setNik_Dosen(rs.getString("nik_dosen"));
+                dosen.setNama_Dosen(rs.getString("nama_dosen"));
+                dosen.setGaji_Dosen(rs.getInt("gaji_dosen"));
+                dosen.setTipe_Dosen(rs.getString("tipe_dosen"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (dosen);
     }
 }

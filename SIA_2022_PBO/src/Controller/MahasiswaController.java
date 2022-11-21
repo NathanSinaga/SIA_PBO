@@ -33,7 +33,7 @@ public class MahasiswaController {
         }
     }
     // SELECT WHERE
-    public static Mahasiswa getUser(String email) { // email && password
+    public static Mahasiswa getMahasiswa(String email) { // email && password
         conn.connect();
         String query = "SELECT * FROM mahasiswa WHERE email='" + email + "'";
         Mahasiswa mahasiswa = new Mahasiswa();

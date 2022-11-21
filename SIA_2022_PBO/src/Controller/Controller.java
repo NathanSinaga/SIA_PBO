@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Mahasiswa;
 import Model.MataKuliah;
 import Model.Pengguna;
 import Model.Pengumuman;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
  * @author Nathan Sinaga
  */
 public class Controller {
+
     static DatabaseHandler conn = new DatabaseHandler();
 
     // Semua dari tabel pengguna
@@ -40,7 +42,7 @@ public class Controller {
         }
         return (users);
     }
-    
+
     //get all pengumuman
     public static ArrayList<Pengumuman> getAllPengumuman() {
         ArrayList<Pengumuman> listPengumuman = new ArrayList<>();
@@ -61,11 +63,11 @@ public class Controller {
         }
         return (listPengumuman);
     }
-    
+
     public static MataKuliah getMataKuliahByKode(String kode_mataKuliah) {
         MataKuliah mk = new MataKuliah();
         conn.connect();
-        String query = "SELECT * FROM matakuliah WHERE matakuliah.kode_matakuliah='" + kode_mataKuliah +  "';";
+        String query = "SELECT * FROM matakuliah WHERE matakuliah.kode_matakuliah='" + kode_mataKuliah + "';";
         try {
             Statement stmt = conn.con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -77,5 +79,46 @@ public class Controller {
             e.printStackTrace();
         }
         return (mk);
+    }
+
+    // SELECT WHERE
+    public static Pengguna getUser(String email, String pass) {
+        conn.connect();
+        String query = "SELECT * FROM pengguna WHERE email='" + email + "' AND password='" + pass +"';";
+        Pengguna pengguna = new Pengguna();
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                pengguna.setEmail(rs.getString("email"));
+                pengguna.setPassword(rs.getString("password"));
+                pengguna.setTipe_Pengguna(rs.getString("tipe_pengguna"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (pengguna);
+    }
+    
+    //get all pengumuman
+    public static ArrayList<MataKuliah> getAllMatkul() {
+        ArrayList<MataKuliah> listMatkul = new ArrayList<>();
+        conn.connect();
+        String query = "SELECT * FROM matakuliah";
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                MataKuliah matkul = new MataKuliah();
+                matkul.setKode_MataKuliah(rs.getString("kode_matakuliah"));
+               matkul.setNama_MataKuliah(rs.getString("nama_matakuliah"));
+               matkul.setSks_MataKuliah(rs.getInt("sks_matakuliah"));
+                //
+                listMatkul.add(matkul);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return (listMatkul);
     }
 }
