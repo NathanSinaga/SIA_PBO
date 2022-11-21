@@ -9,5 +9,6 @@ package Model;
  */
 public interface KehadiranInterface
 {
-
+    int HADIR = 1;
+    int ABSEN = 0;
 }
