@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("s");
-// 1
+        // 1
         new FormLogin().setVisible(true);
         // 2
         new FormPengajuanRS().setVisible(true);
@@ -31,7 +31,7 @@ public class Main {
         // 6
         new FormAbsensi().setVisible(true);
         // 7
-        FormFeedBack formfeedback = new FormFeedBack();
+        FormFeedBack formFeedBack = new FormFeedBack();
         // 8
         // skip dulu tunggu fungsi
         // 9
