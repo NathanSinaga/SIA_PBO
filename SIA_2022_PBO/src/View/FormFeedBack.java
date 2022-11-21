@@ -10,7 +10,7 @@ package View;
  * @author Michel P
  */
 import Controller.DosenController;
-import Controller.ControllerFeedBack;
+import Controller.MahasiswaController;
 import Model.Dosen;
 import javax.swing.*;
 import java.awt.*;
@@ -81,7 +81,7 @@ public class FormFeedBack extends JFrame implements ActionListener {
         String data1 = "1xyyxx";
         String data2 = tSaran.getText();
         if (e.getSource() == sub) {
-            boolean cek = ControllerFeedBack.insertNewFeedback(data1, data, data2);
+            boolean cek = MahasiswaController.insertNewFeedback(data1, data, data2);
             if (cek) {
                 System.out.println("masuk");
             }
