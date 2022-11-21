@@ -19,9 +19,28 @@ import java.util.ArrayList;
  * @author Nathan Sinaga
  */
 public class Controller {
-
     static DatabaseHandler conn = new DatabaseHandler();
 
+    public Controller(){
+        String email = "juan@gmail.com";
+        String password = "juanpassword";
+        Pengguna newPengguna = getUser(email, password);
+        
+        switch(newPengguna.getTipe_Pengguna()){
+            case "MAHASISWA":
+                MahasiswaController mahasiswaController = new MahasiswaController(newPengguna.getEmail());
+                break;
+            case "DOSEN":
+                DosenController dosenController = new DosenController(newPengguna.getEmail());
+                break;
+            case "DAAK":
+                DaakController daakController = new DaakController(newPengguna.getEmail());
+                break;
+        }
+    }
+    
+
+    
     // Semua dari tabel pengguna
     public static ArrayList<Pengguna> getAllUsers() {
         ArrayList<Pengguna> users = new ArrayList<>();
@@ -109,8 +128,8 @@ public class Controller {
             Statement stmt = conn.con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                MataKuliah matkul = new MataKuliah();
-                matkul.setKode_MataKuliah(rs.getString("kode_matakuliah"));
+               MataKuliah matkul = new MataKuliah();
+               matkul.setKode_MataKuliah(rs.getString("kode_matakuliah"));
                matkul.setNama_MataKuliah(rs.getString("nama_matakuliah"));
                matkul.setSks_MataKuliah(rs.getInt("sks_matakuliah"));
                 //

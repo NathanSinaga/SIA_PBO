@@ -14,9 +14,14 @@ import java.sql.Statement;
  *
  * @author yudis
  */
-public class MahasiswaController {
-    
+public class MahasiswaController {    
     static DatabaseHandler conn = new DatabaseHandler();
+    static Mahasiswa mahasiswa;
+    
+    public MahasiswaController(String email){
+        this.mahasiswa = getMahasiswa(email);
+    }
+    
     public static boolean insertNewFeedback(String nik, String nim, String Saran) {
         conn.connect();
         String query = "INSERT INTO feedback(nik_dosen,nim_mahasiswa, saran) VALUES(?,?,?)";

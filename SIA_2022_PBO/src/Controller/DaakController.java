@@ -22,7 +22,13 @@ import java.util.ArrayList;
  * @author Nathan Sinaga
  */
 public class DaakController {
-
+    static DatabaseHandler conn = new DatabaseHandler();
+    static Daak daak;
+    
+    public DaakController(String email){
+        this.daak = getDaak(email);
+    }
+    
     //get all Daak
     public static ArrayList<Daak> getAllDaak() {
         ArrayList<Daak> listDaak = new ArrayList<>();

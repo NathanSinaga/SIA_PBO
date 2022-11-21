@@ -22,6 +22,12 @@ import java.util.ArrayList;
  */
 public class DosenController {
     static DatabaseHandler conn = new DatabaseHandler();
+    static Dosen dosen;
+    
+    public DosenController(String email){
+        this.dosen = getDosen(email);
+    }
+    
     // Dosen Mengajukan Pengumuman ke bagian DAAK
     public void DosenMengajukanPengumuman (){
         
