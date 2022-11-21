@@ -23,6 +23,9 @@ public class Pengumuman
         this.tanggalPosting = tanggalPosting;
         this.catatan = catatan;
     }
+    public Pengumuman(){
+        
+    }
 
     public int getIdPengumuman()
     {
