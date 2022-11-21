@@ -31,7 +31,7 @@ public class Main {
         // 6
         new FormAbsensi().setVisible(true);
         // 7
-        new FormKotakSaran().setVisible(true);
+        FormFeedBack formfeedback = new FormFeedBack();
         // 8
         // skip dulu tunggu fungsi
         // 9
