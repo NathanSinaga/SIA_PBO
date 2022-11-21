@@ -119,11 +119,13 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         } else if (e.getSource() == bAbsen) {
 
         } else if (e.getSource() == bFeedBack) {
-
+            FormFeedBack formFeedBack = new FormFeedBack();
         } else if (e.getSource() == bTransaksi) {
-
+            FormLihatDaftarTransaksi FormLihatDaftarTransaksi = new FormLihatDaftarTransaksi();
         } else if (e.getSource() == bUpdateData) {
-
+            FormUpdateDataMahasiswa formUpdateDataMahasiswa = new FormUpdateDataMahasiswa ();
+        }else if (e.getSource() == bLihatPengumuman ) {
+            Lihat_Pengumuman lihatPengumuman  = new Lihat_Pengumuman();
         }
 
     }
