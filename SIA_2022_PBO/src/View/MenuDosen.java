@@ -27,7 +27,7 @@ public class MenuDosen extends JFrame implements ActionListener{
         contraniner = getContentPane();
         contraniner.setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //Mahasiswa
+        
         bJadwalAjar = new JButton("Jadwal Ajar");
         bJadwalAjar.setFont(new Font("Arial", Font.PLAIN, 15));
         bJadwalAjar.setSize(280, 50);
