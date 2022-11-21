@@ -34,7 +34,7 @@ public class Form_PengajuanPengumuman {
     JComboBox listNik;
     JButton ajukan;
 
-    Form_PengajuanPengumuman(){
+    public Form_PengajuanPengumuman(){
         frame = new JFrame();
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
@@ -99,9 +99,5 @@ public class Form_PengajuanPengumuman {
 
         frame.setLayout(null);
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new Form_PengajuanPengumuman();
     }
 }

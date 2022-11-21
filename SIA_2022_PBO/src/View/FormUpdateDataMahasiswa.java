@@ -100,8 +100,4 @@ public class FormUpdateDataMahasiswa {
         frame.setLayout(null);
         frame.setVisible(true);
     }
-
-    public static void main(String[] args) {
-        new FormUpdateDataMahasiswa();
-    }
 }

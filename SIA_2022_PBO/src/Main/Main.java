@@ -33,6 +33,7 @@ public class Main {
         // 7
         FormFeedBack formFeedBack = new FormFeedBack();
         // 8
+        new FormUpdateDataMahasiswa();
         // skip dulu tunggu fungsi
         // 9
         // message box
@@ -41,11 +42,13 @@ public class Main {
         // 11
         new FormMasukNilai().setVisible(true);
         // 12
-        new FormMengajukanPengumuman().setVisible(true);
+        new Form_PengajuanPengumuman();
+        //new FormMengajukanPengumuman().setVisible(true);
         // 13
         // jadwal jadwal apa?
         // 14
-        new FormMasukPengumuman().setVisible(true);
+        new Form_BuatPengumuman();
+        //new FormMasukPengumuman().setVisible(true);
         // 15
         new FormJadwalKuliah().setVisible(true);
         // 16

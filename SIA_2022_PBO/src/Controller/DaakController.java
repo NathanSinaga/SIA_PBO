@@ -9,6 +9,9 @@ import static Controller.DosenController.conn;
 import Model.Daak;
 import Model.Dosen;
 import Model.Mahasiswa;
+import Model.Pengumuman;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -43,6 +46,24 @@ public class DaakController {
         return (listDaak);
     }
 
+    //Insert pengumuman
+    public static boolean insertPengumuman(String nik_daak, Pengumuman pengumuman) {
+        conn.connect();
+        String query = "INSERT INTO pengumuman(nik_daak, judul, deskripsi, tanggal) VALUES(?,?,?,?)";
+        try {
+            PreparedStatement stmt = conn.con.prepareStatement(query);
+            stmt.setString(1, nik_daak);
+            stmt.setString(2, pengumuman.getJudul());
+            stmt.setString(3, pengumuman.getDeskripsi());
+            stmt.setDate(4, (Date) pengumuman.getTanggalPosting());
+            stmt.executeUpdate();
+            return (true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return (false);
+        }
+    }
+    
     // Ditambahkan oleh Dominikus Yudistira
     // Daak memasukkan Pengumuman
     public void DaakMemasukkanPengumuman(String judul, String deskripsi) {
