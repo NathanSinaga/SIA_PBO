@@ -28,13 +28,13 @@ public class Controller {
         
         switch(newPengguna.getTipe_Pengguna()){
             case "MAHASISWA":
-                MahasiswaController mahasiswaController = new MahasiswaController(newPengguna.getEmail());
+                MahasiswaController mahasiswaController = new MahasiswaController(newPengguna);
                 break;
             case "DOSEN":
-                DosenController dosenController = new DosenController(newPengguna.getEmail());
+                DosenController dosenController = new DosenController(newPengguna);
                 break;
             case "DAAK":
-                DaakController daakController = new DaakController(newPengguna.getEmail());
+                DaakController daakController = new DaakController(newPengguna);
                 break;
         }
     }

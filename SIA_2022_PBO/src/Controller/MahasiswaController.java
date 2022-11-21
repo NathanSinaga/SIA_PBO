@@ -6,6 +6,7 @@ package Controller;
 
 import static Controller.DosenController.conn;
 import Model.Mahasiswa;
+import Model.Pengguna;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,8 +19,8 @@ public class MahasiswaController {
     static DatabaseHandler conn = new DatabaseHandler();
     static Mahasiswa mahasiswa;
     
-    public MahasiswaController(String email){
-        this.mahasiswa = getMahasiswa(email);
+    public MahasiswaController(Pengguna newPengguna){
+        this.mahasiswa = getMahasiswa(newPengguna.getEmail());
     }
     
     public static boolean insertNewFeedback(String nik, String nim, String Saran) {

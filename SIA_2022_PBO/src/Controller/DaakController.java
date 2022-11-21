@@ -5,10 +5,10 @@
  */
 package Controller;
 
-import static Controller.DosenController.conn;
 import Model.Daak;
 import Model.Dosen;
 import Model.Mahasiswa;
+import Model.Pengguna;
 import Model.Pengumuman;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -25,8 +25,8 @@ public class DaakController {
     static DatabaseHandler conn = new DatabaseHandler();
     static Daak daak;
     
-    public DaakController(String email){
-        this.daak = getDaak(email);
+    public DaakController(Pengguna newPengguna){
+        this.daak = getDaak(newPengguna.getEmail());
     }
     
     //get all Daak

@@ -8,6 +8,7 @@ import static Controller.MahasiswaController.conn;
 import Model.Dosen;
 import Model.Mahasiswa;
 import Model.PengajuanPengumuman;
+import Model.Pengguna;
 import Model.Pengumuman;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -24,8 +25,8 @@ public class DosenController {
     static DatabaseHandler conn = new DatabaseHandler();
     static Dosen dosen;
     
-    public DosenController(String email){
-        this.dosen = getDosen(email);
+    public DosenController(Pengguna newPengguna){
+        this.dosen = getDosen(newPengguna.getEmail());
     }
     
     // Dosen Mengajukan Pengumuman ke bagian DAAK
