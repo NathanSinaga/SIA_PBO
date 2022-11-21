@@ -9,70 +9,61 @@ package Model;
  */
 public class Keuangan
 {
-    private int idBiaya;
-    private int idPengumuman;
-    private int nim;
-    private int jumlahBiaya;
-    private String deksripsi;
-
-    public Keuangan(int idBiaya, int idPengumuman, int nim, int jumlahBiaya, String deksripsi)
-    {
-        this.idBiaya = idBiaya;
-        this.idPengumuman = idPengumuman;
-        this.nim = nim;
-        this.jumlahBiaya = jumlahBiaya;
-        this.deksripsi = deksripsi;
+    private String nim_mahasiswa;
+    private int id_rencanaStudi;
+    private int id_pembayaran;
+    private int jumlah;
+    private String tanggal;
+    
+    public Keuangan(){
+        
+    }
+    
+    public Keuangan(String nim_mahasiswa, int id_rencanaStudi, int id_pembayaran, int jumlah, String tanggal){
+        this.nim_mahasiswa = nim_mahasiswa;
+        this.id_rencanaStudi = id_rencanaStudi;
+        this.id_pembayaran = id_pembayaran;
+        this.jumlah = jumlah;
+        this.tanggal = tanggal;
+    }
+    
+    public void setNim_Mahasiswa(String nim_mahasiswa){
+        this.nim_mahasiswa = nim_mahasiswa;
+    }
+    
+    public void setId_RencanaStudi(int id_rencanaStudi){
+        this.id_rencanaStudi = id_rencanaStudi;
+    }
+    
+    public void setId_Pembayaran(int id_pembayaran){
+        this.id_pembayaran = id_pembayaran;
+    }
+    
+    public void setJumlah(int jumlah){
+        this.jumlah = jumlah;
+    }
+    
+    public void setTanggal(String tanggal){
+        this.tanggal = tanggal;
     }
 
-    public int getIdBiaya()
-    {
-        return idBiaya;
+    public String getNim_Mahasiswa(){
+        return this.nim_mahasiswa;
     }
-
-    public void setIdBiaya(int idBiaya)
-    {
-        this.idBiaya = idBiaya;
+    
+    public int getId_RencanaStudi(){
+        return this.id_rencanaStudi;
     }
-
-    public int getIdPengumuman()
-    {
-        return idPengumuman;
+    
+    public int getId_Pembayaran(){
+        return this.id_pembayaran;
     }
-
-    public void setIdPengumuman(int idPengumuman)
-    {
-        this.idPengumuman = idPengumuman;
+    
+    public int getJumlah(){
+        return this.jumlah;
     }
-
-    public int getNim()
-    {
-        return nim;
+    
+    public String getTanggal(){
+        return this.tanggal;
     }
-
-    public void setNim(int nim)
-    {
-        this.nim = nim;
-    }
-
-    public int getJumlahBiaya()
-    {
-        return jumlahBiaya;
-    }
-
-    public void setJumlahBiaya(int jumlahBiaya)
-    {
-        this.jumlahBiaya = jumlahBiaya;
-    }
-
-    public String getDeksripsi()
-    {
-        return deksripsi;
-    }
-
-    public void setDeksripsi(String deksripsi)
-    {
-        this.deksripsi = deksripsi;
-    }
-
-
 }
