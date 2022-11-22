@@ -60,7 +60,7 @@ public class MenuDAAK extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == bInputJadwal) {
-
+            new FormJadwalKuliah();
         } else if (e.getSource() == bInputPengumuman) {
             new Form_BuatPengumuman();
         } else if (e.getSource() == bLihatPengumuman) {
