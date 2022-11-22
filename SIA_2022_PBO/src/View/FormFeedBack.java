@@ -12,6 +12,7 @@ package View;
 import Controller.DosenController;
 import Controller.MahasiswaController;
 import Model.Dosen;
+import Model.Mahasiswa;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -23,18 +24,21 @@ public class FormFeedBack extends JFrame implements ActionListener {
 
     private Container contraniner;
     private JLabel lNik;
-    ArrayList<Dosen> Listdosen = DosenController.getAllNikDosen();
+
     private JLabel lNim;
     private JComboBox nik;
     private JComboBox nim;
     private JLabel lSaran;
     private JTextArea tSaran;
     private JButton sub;
+    ArrayList<Dosen> listDosen = DosenController.getAllNikDosen();
+    private Mahasiswa mahasiswa;
 
-    public FormFeedBack() {
-        String apa[] = new String[Listdosen.size()];
-        for (int i = 0; i < Listdosen.size(); i++) {
-            apa[i] = String.valueOf(Listdosen.get(i).getNik_Dosen());
+    public FormFeedBack(Mahasiswa mahasiswa) {
+        this.mahasiswa = mahasiswa;
+        String[] dosen = new String[listDosen.size()];
+        for (int i = 0; i < listDosen.size(); i++) {
+            dosen[i] = String.valueOf(listDosen.get(i).getNik_Dosen());
         }
         contraniner = getContentPane();
         contraniner.setLayout(null);
@@ -46,7 +50,7 @@ public class FormFeedBack extends JFrame implements ActionListener {
         lNik.setLocation(100, 80);
         contraniner.add(lNik);
 
-        nik = new JComboBox(apa);
+        nik = new JComboBox(dosen);
         nik.setFont(new Font("Arial", Font.PLAIN, 15));
         nik.setSize(150, 20);
         nik.setLocation(200, 80);
@@ -77,11 +81,8 @@ public class FormFeedBack extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String data = (String) nik.getSelectedItem();
-        String data1 = "1xyyxx";
-        String data2 = tSaran.getText();
         if (e.getSource() == sub) {
-            boolean cek = MahasiswaController.insertNewFeedback(data1, data, data2);
+            boolean cek = MahasiswaController.insertNewFeedback(listDosen.get(nik.getSelectedIndex()).getNik_Dosen(), mahasiswa.getNim_Mahasiswa(), tSaran.getText());
             if (cek) {
                 System.out.println("masuk");
             }

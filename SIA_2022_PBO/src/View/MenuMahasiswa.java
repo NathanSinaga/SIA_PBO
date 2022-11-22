@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Mahasiswa;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -31,8 +32,9 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
     private JButton bTransaksi;
     private JButton bUpdateData;
     private JButton bLihatPengumuman;
-
-    public MenuMahasiswa() {
+    private Mahasiswa mahasiswa;
+    public MenuMahasiswa(Mahasiswa mahasiswa) {
+        this.mahasiswa = mahasiswa;
         contraniner = getContentPane();
         contraniner.setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -119,18 +121,14 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         } else if (e.getSource() == bAbsen) {
             new FormAbsensi ();
         } else if (e.getSource() == bFeedBack) {
-            new FormFeedBack();
+            new FormFeedBack(mahasiswa);
         } else if (e.getSource() == bTransaksi) {
             new FormLihatDaftarTransaksi();
         } else if (e.getSource() == bUpdateData) {
-            new FormUpdateDataMahasiswa();
+            new FormUpdateDataMahasiswa(mahasiswa);
         } else if (e.getSource() == bLihatPengumuman) {
             new Lihat_Pengumuman();
         }
 
-    }
-
-    public static void main(String[] args) {
-        MenuMahasiswa menu = new MenuMahasiswa();
     }
 }

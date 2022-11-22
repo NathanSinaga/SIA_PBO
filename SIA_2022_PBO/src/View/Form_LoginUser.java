@@ -85,17 +85,17 @@ public class Form_LoginUser {
                         if (pengguna.getTipe_Pengguna().equals(Model.Tipe_Pengguna.MAHASISWA.toString())) {
                             Mahasiswa mahasiswa = Controller.MahasiswaController.getMahasiswa(pengguna.getEmail());
                             JOptionPane.showMessageDialog(null, "Welcome "+mahasiswa.getNama_Mahasiswa(), "Login Berhasl", JOptionPane.INFORMATION_MESSAGE);
-                            new MenuMahasiswa();
+                            new MenuMahasiswa(mahasiswa);
                             frame.dispose();
                         }else if (pengguna.getTipe_Pengguna().equals(Model.Tipe_Pengguna.DOSEN.toString())) {
                             Dosen dosen = Controller.DosenController.getDosen(pengguna.getEmail());
                             JOptionPane.showMessageDialog(null, "Welcome "+dosen.getNama_Dosen(), "Login Berhasl", JOptionPane.INFORMATION_MESSAGE);
-                            new MenuDosen();
+                            new MenuDosen(dosen);
                             frame.dispose();
                         }else if (pengguna.getTipe_Pengguna().equals(Model.Tipe_Pengguna.DAAK.toString())) {
                             Daak daak = Controller.DaakController.getDaak(pengguna.getEmail());
                             JOptionPane.showMessageDialog(null, "Welcome "+daak.getNama_Daak(), "Login Berhasil", JOptionPane.INFORMATION_MESSAGE);
-                            new MenuDAAK();
+                            new MenuDAAK(daak);
                             frame.dispose();
                         }
                     }

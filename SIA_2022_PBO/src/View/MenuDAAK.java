@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Daak;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -25,8 +26,9 @@ public class MenuDAAK extends JFrame implements ActionListener {
     private JButton bInputJadwal;
     private JButton bLihatPengumuman;
     private JButton bInputPengumuman;
-
-    public MenuDAAK() {
+    private Daak daak;
+    public MenuDAAK(Daak daak) {
+        this.daak = daak;
         contraniner = getContentPane();
         contraniner.setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,14 +40,14 @@ public class MenuDAAK extends JFrame implements ActionListener {
         bInputJadwal.addActionListener(this);
         contraniner.add(bInputJadwal);
 
-        bInputPengumuman = new JButton("Input Nilai");
+        bInputPengumuman = new JButton("Buat Pengumuman");
         bInputPengumuman.setFont(new Font("Arial", Font.PLAIN, 15));
         bInputPengumuman.setSize(280, 50);
         bInputPengumuman.setLocation(150, 130);
         bInputPengumuman.addActionListener(this);
         contraniner.add(bInputPengumuman);
 
-        bLihatPengumuman = new JButton("Pengajuan Pengumuman");
+        bLihatPengumuman = new JButton("Lihat Pengumuman");
         bLihatPengumuman.setFont(new Font("Arial", Font.PLAIN, 15));
         bLihatPengumuman.setSize(280, 50);
         bLihatPengumuman.setLocation(150, 200);
@@ -62,7 +64,7 @@ public class MenuDAAK extends JFrame implements ActionListener {
         if (e.getSource() == bInputJadwal) {
             new FormJadwalKuliah();
         } else if (e.getSource() == bInputPengumuman) {
-            new Form_BuatPengumuman();
+            new Form_BuatPengumuman(daak);
         } else if (e.getSource() == bLihatPengumuman) {
             new Lihat_Pengumuman();
         }

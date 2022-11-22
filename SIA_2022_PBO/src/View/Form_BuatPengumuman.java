@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static Controller.DaakController.*;
+import Model.Daak;
 import javax.swing.JTextArea;
 /**
  *
@@ -30,7 +31,7 @@ public class Form_BuatPengumuman {
     JCheckBox cekMahasiswa, cekDosen;
     JButton agree;
     JTextArea inputDeskripsi;
-    public Form_BuatPengumuman(){
+    public Form_BuatPengumuman(Daak daak){
         frame = new JFrame();
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);

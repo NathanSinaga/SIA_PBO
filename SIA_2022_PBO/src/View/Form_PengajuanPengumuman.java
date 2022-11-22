@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import static Controller.DosenController.*;
+import Model.Dosen;
 import Model.PengajuanPengumuman;
 /**
  *
@@ -34,7 +35,7 @@ public class Form_PengajuanPengumuman {
     JComboBox listNik;
     JButton ajukan;
 
-    public Form_PengajuanPengumuman(){
+    public Form_PengajuanPengumuman(Dosen dosen){
         frame = new JFrame();
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
@@ -81,6 +82,7 @@ public class Form_PengajuanPengumuman {
         ajukan = new JButton("Ajukan");
         ajukan.setBounds(335, 355, 250, 40);
         frame.add(ajukan);
+        
         ajukan.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -89,7 +91,7 @@ public class Form_PengajuanPengumuman {
                 } else {
                     long millis = System.currentTimeMillis();
                     java.sql.Date date = new java.sql.Date(millis);
-                    boolean cek = insertPengajuanPengumuman("33xxyy", new PengajuanPengumuman(listDaak.get(listNik.getSelectedIndex()).getNik_Daak(), inputJudul.getText(), inputDeskripsi.getText(), date));
+                    boolean cek = insertPengajuanPengumuman(dosen.getNik_Dosen(), new PengajuanPengumuman(listDaak.get(listNik.getSelectedIndex()).getNik_Daak(), inputJudul.getText(), inputDeskripsi.getText(), date));
                     if (cek) {
                         JOptionPane.showMessageDialog(null, "Pengumuman berhasil diajukan");
                     }

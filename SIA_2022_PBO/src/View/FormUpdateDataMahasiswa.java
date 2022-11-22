@@ -25,15 +25,10 @@ public class FormUpdateDataMahasiswa {
     JTextField email, id_jurusan, nim, nama;
     JButton update, back;
 
-    public FormUpdateDataMahasiswa() {
+    public FormUpdateDataMahasiswa(Mahasiswa mahasiswa) {
         frame = new JFrame();
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
-
-        Mahasiswa mhs = new Mahasiswa();
-        mhs = getMahasiswa("juan@gmail.com"); // ini ntar diganti jadii usernow.email
-
-        String tempEmail = mhs.getEmail(); 
 
         header = new JLabel("Update Mahasiswa");
         header.setBounds(270, 50, 400, 50);
@@ -44,16 +39,16 @@ public class FormUpdateDataMahasiswa {
         lemail.setBounds(220, 150, 150, 50);
         frame.add(lemail);
 
-        email = new JTextField(mhs.getEmail());
+        email = new JTextField(mahasiswa.getEmail());
         email.setBounds(370, 150, 150, 50);
-        email.setText(mhs.getEmail());
+        email.setText(mahasiswa.getEmail());
         frame.add(email);
 
         lid_jurusan = new JLabel("ID Jurusan        :");
         lid_jurusan.setFont(new Font("Dialog", 1, 15));
         lid_jurusan.setBounds(220, 220, 150, 50);
         frame.add(lid_jurusan);
-        id_jurusan = new JTextField(Integer.toString(mhs.getId_Jurusan()));
+        id_jurusan = new JTextField(Integer.toString(mahasiswa.getId_Jurusan()));
         id_jurusan.setBounds(370, 220, 150, 50);
         frame.add(id_jurusan);
 
@@ -61,7 +56,7 @@ public class FormUpdateDataMahasiswa {
         lnim.setFont(new Font("Dialog", 1, 15));
         lnim.setBounds(220, 290, 150, 50);
         frame.add(lnim);
-        nim = new JTextField(mhs.getNim_Mahasiswa());
+        nim = new JTextField(mahasiswa.getNim_Mahasiswa());
         nim.setBounds(370, 290, 150, 50);
         frame.add(nim);
 
@@ -69,7 +64,7 @@ public class FormUpdateDataMahasiswa {
         lnama.setFont(new Font("Dialog", 1, 15));
         lnama.setBounds(220, 360, 150, 50);
         frame.add(lnama);
-        nama = new JTextField(mhs.getNama_Mahasiswa());
+        nama = new JTextField(mahasiswa.getNama_Mahasiswa());
         nama.setBounds(370, 360, 150, 50);
         frame.add(nama);
 
@@ -82,7 +77,7 @@ public class FormUpdateDataMahasiswa {
                 if (email.getText().isEmpty() || id_jurusan.getText().isEmpty() || nim.getText().isEmpty() || nama.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Field tidak boleh kosong", "Error", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    boolean cek = updateMahasiswa(tempEmail, new Mahasiswa(email.getText(), Integer.parseInt(id_jurusan.getText()), nim.getText(), nama.getText()));
+                    boolean cek = updateMahasiswa(mahasiswa.getEmail(), new Mahasiswa(email.getText(), Integer.parseInt(id_jurusan.getText()), nim.getText(), nama.getText()));
                     if (cek) {
                         JOptionPane.showMessageDialog(null, "Data berhasil diupdate");
                     } else {

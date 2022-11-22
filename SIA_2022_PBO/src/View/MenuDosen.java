@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Dosen;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -26,8 +27,10 @@ public class MenuDosen extends JFrame implements ActionListener {
     private JButton bInputNilai;
     private JButton bIsiPengumuman;
     private JButton bLihatPengumuman;
-
-    public MenuDosen() {
+    private Dosen dosen;
+    
+    public MenuDosen(Dosen dosen) {
+        this.dosen = dosen;
         contraniner = getContentPane();
         contraniner.setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -72,7 +75,7 @@ public class MenuDosen extends JFrame implements ActionListener {
         } else if (e.getSource() == bInputNilai) {
             new FormMasukNilai();
         } else if (e.getSource() == bIsiPengumuman) {
-            new Form_PengajuanPengumuman();
+            new Form_PengajuanPengumuman(dosen);
         } else if (e.getSource() == bLihatPengumuman) {
             new Lihat_Pengumuman();
         }
