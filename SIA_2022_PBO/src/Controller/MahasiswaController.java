@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+
 /**
  *
  * @author yudis
@@ -75,7 +77,49 @@ public class MahasiswaController {
             return (false);
         }
     }
-    
+
+    static public HashMap<String, Integer> absensiMahasiswa(int tahun, int semester, String nim)
+    {
+        HashMap<String, Integer> result = new HashMap<String, Integer>();
+        String query = String.format("SELECT detail_rencanastudi.kode_matakuliah, COUNT(absensi.id_absensi) AS 'jumlah_absensi' FROM rencanastudi INNER JOIN detail_rencanastudi ON detail_rencanastudi.id_rencanastudi = rencanastudi.id_rencanastudi INNER JOIN absensi ON absensi.id_detailrencanastudi = detail_rencanastudi.id_detailrencanastudi WHERE rencanastudi.nim_mahasiswa = '%s' AND rencanastudi.tahun = '%d' AND rencanastudi.semester = '%d' GROUP BY detail_rencanastudi.id_detailrencanastudi", nim, tahun, semester);
+        conn.connect();
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                result.put(rs.getString("kode_matakuliah"), rs.getInt("jumlah_absensi"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return result;
+        }
+        return result;
+    }
+
+    static public int[] nilaiMahasiswa(int tahun, int semester, String nim, String kodemk)
+    {
+        int[] result = new int[7];
+        String query = String.format("SELECT * FROM rencanastudi INNER JOIN detail_rencanastudi ON detail_rencanastudi.id_rencanastudi = rencanastudi.id_rencanastudi WHERE rencanastudi.nim_mahasiswa = '%s' AND detail_rencanastudi.kode_matakuliah = '%s' AND rencanastudi.tahun = '%d' AND rencanastudi.semester = '%d';", nim, kodemk, tahun, semester);
+        conn.connect();
+        try {
+            Statement stmt = conn.con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                result[0] = rs.getInt("n1");
+                result[1] = rs.getInt("n2");
+                result[2] = rs.getInt("n3");
+                result[3] = rs.getInt("n4");
+                result[4] = rs.getInt("n5");
+                result[5] = rs.getInt("uts");
+                result[6] = rs.getInt("uas");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return result;
+        }
+        return result;
+    }
+
     
     public void MemasukanRencanaStudi (){
         

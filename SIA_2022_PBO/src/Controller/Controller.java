@@ -26,7 +26,8 @@ public class Controller {
         String password = "juanpassword";
         Pengguna newPengguna = getUser(email, password);
         
-        switch(newPengguna.getTipe_Pengguna()){
+        switch (newPengguna.getTipe_Pengguna())
+        {
             case "MAHASISWA":
                 MahasiswaController mahasiswaController = new MahasiswaController(newPengguna);
                 break;

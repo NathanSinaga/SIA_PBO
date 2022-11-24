@@ -117,9 +117,9 @@ public class MenuMahasiswa extends JFrame implements ActionListener {
         } else if (e.getSource() == bJadwal) {
             new FormJadwalKuliah();
         } else if (e.getSource() == bNilai) {
-            new FormNilai();
+            new FormNilai(mahasiswa).setVisible(true);
         } else if (e.getSource() == bAbsen) {
-            new FormAbsensi ();
+            new FormAbsensi(mahasiswa).setVisible(true);
         } else if (e.getSource() == bFeedBack) {
             new FormFeedBack(mahasiswa);
         } else if (e.getSource() == bTransaksi) {

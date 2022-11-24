@@ -17,9 +17,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-           new Form_LoginUser();
+
+        //new Form_LoginUser();
+
 //        // 1
-//        new FormLogin().setVisible(true);
+        new FormLogin().setVisible(true);
 //        // 2
 //        new FormPengajuanRS().setVisible(true);
 //        // 3
