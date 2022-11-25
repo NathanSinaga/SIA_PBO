@@ -7,36 +7,29 @@ package Model;
 /**
  * @author yudis
  */
-public class FeedBack
-{
+public class FeedBack {
+
     private String nama;
     private String saran;
 
-    public FeedBack(String nama, String saran)
-    {
+    public FeedBack(String nama, String saran) {
         this.nama = nama;
         this.saran = saran;
     }
 
-    public String getNama()
-    {
+    public String getNama() {
         return nama;
     }
 
-    public void setNama(String nama)
-    {
+    public void setNama(String nama) {
         this.nama = nama;
     }
 
-    public String getSaran()
-    {
+    public String getSaran() {
         return saran;
     }
 
-    public void setSaran(String saran)
-    {
+    public void setSaran(String saran) {
         this.saran = saran;
     }
 }
-
-
