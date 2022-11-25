@@ -28,17 +28,17 @@ public class FormNilai extends BaseForm
 
     public boolean accept()
     {
-        var result = MahasiswaController.nilaiMahasiswa((int)this.tahunBox.getValue(), this.semesterBox.getSelectedIndex(), this.mahasiswa.getNim_Mahasiswa(), this.mkBox.getText());
+        int[] result = MahasiswaController.nilaiMahasiswa((int)this.tahunBox.getValue(), this.semesterBox.getSelectedIndex(), this.mahasiswa.getNim_Mahasiswa(), this.mkBox.getText());
         if (result.length == 7)
         {
-            String s = "";
+            StringBuilder s = new StringBuilder();
             for (int i = 0; i < 5; i++)
             {
-                s += "nilai " + (i + 1) + " -> " + result[i] + "\n";
+                s.append("nilai ").append(i + 1).append(" -> ").append(result[i]).append("\n");
             }
-            s += "nilai uts -> " + result[5] + "\n";
-            s += "nilai uas -> " + result[6];
-            JOptionPane.showMessageDialog(null, s);
+            s.append("nilai uts -> ").append(result[5]).append("\n");
+            s.append("nilai uas -> ").append(result[6]);
+            JOptionPane.showMessageDialog(null, s.toString());
         }
         return true;
     }

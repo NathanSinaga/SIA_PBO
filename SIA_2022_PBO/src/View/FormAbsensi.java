@@ -4,6 +4,8 @@ import Controller.MahasiswaController;
 import Model.Mahasiswa;
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FormAbsensi extends BaseForm
 {
@@ -26,9 +28,9 @@ public class FormAbsensi extends BaseForm
 
     public boolean accept()
     {
-        var rs = MahasiswaController.absensiMahasiswa((int)tahunBox.getValue(), semesterBox.getSelectedIndex(), this.mahasiswa.getNim_Mahasiswa());
+        HashMap<String, Integer> rs = MahasiswaController.absensiMahasiswa((int)tahunBox.getValue(), semesterBox.getSelectedIndex(), this.mahasiswa.getNim_Mahasiswa());
         StringBuilder absensi = new StringBuilder();
-        for (var entry : rs.entrySet())
+        for (Map.Entry<String, Integer> entry : rs.entrySet())
         {
             String key = entry.getKey();
             int value = entry.getValue();
