@@ -6,7 +6,7 @@ Digunakan sebagai repository Tugas Besar Pemograman Berorientasi Objek
 
 1118017 - Dominikus Yudistira
 
-1121039 - Juan Nathaniel
+1121039 - Juan Nathaniel (TUF GAMING) User
 
 1121043 - Nathan Sinaga
 
